@@ -1,5 +1,6 @@
 package com.yeonkyu.daggerhiltexercise.network
 
+import com.yeonkyu.daggerhiltexercise.model.TrackResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

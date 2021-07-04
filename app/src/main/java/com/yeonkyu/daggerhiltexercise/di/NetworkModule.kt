@@ -1,6 +1,7 @@
 package com.yeonkyu.daggerhiltexercise.di
 
 import com.yeonkyu.daggerhiltexercise.BuildConfig
+import com.yeonkyu.daggerhiltexercise.network.ITunesSearchService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
