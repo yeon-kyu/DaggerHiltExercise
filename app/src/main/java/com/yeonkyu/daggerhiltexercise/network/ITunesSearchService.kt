@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface ITunesSearchService {
     @GET("/search?")
-    suspend fun searchTrack(
+    suspend fun fetchTrackList(
         @Query("term") term:String,
         @Query("entity") entity:String,
         @Query("limit") limit: Int,

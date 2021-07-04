@@ -1,6 +1,7 @@
 package com.yeonkyu.daggerhiltexercise.di
 
 import com.yeonkyu.daggerhiltexercise.BuildConfig
+import com.yeonkyu.daggerhiltexercise.network.ITunesClient
 import com.yeonkyu.daggerhiltexercise.network.ITunesSearchService
 import dagger.Module
 import dagger.Provides
@@ -42,8 +43,13 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideITunesService(retrofit: Retrofit): ITunesSearchService =
-        retrofit.create(ITunesSearchService::class.java)
+    fun provideITunesService(retrofit: Retrofit): ITunesSearchService {
+        return retrofit.create(ITunesSearchService::class.java)
+    }
 
-
+    @Provides
+    @Singleton
+    fun provideITunesClient(iTunesService: ITunesSearchService): ITunesClient{
+        return ITunesClient(iTunesService)
+    }
 }
