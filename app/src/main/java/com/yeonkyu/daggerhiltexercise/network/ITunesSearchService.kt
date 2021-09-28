@@ -1,6 +1,6 @@
 package com.yeonkyu.daggerhiltexercise.network
 
-import com.yeonkyu.daggerhiltexercise.model.TrackResponse
+import com.yeonkyu.daggerhiltexercise.data.api.TrackListResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -13,5 +13,5 @@ interface ITunesSearchService {
         @Query("entity") entity:String,
         @Query("limit") limit: Int,
         @Query("offset") offset:Int
-    ) : Response<TrackResponse>
+    ) : Response<TrackListResponse>
 }

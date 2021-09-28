@@ -1,8 +1,8 @@
-package com.yeonkyu.daggerhiltexercise.model
+package com.yeonkyu.daggerhiltexercise.data.api
 
 import com.google.gson.annotations.SerializedName
 
-data class TrackResult(
+data class TrackResponse(
     @SerializedName(value = "trackId")
     val trackId: Int,
     @SerializedName(value = "trackName")

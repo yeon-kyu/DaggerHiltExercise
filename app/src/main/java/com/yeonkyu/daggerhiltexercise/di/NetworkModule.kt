@@ -17,6 +17,8 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
+    const val BASE_URL = "https://itunes.apple.com/"
+
     @Provides
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
@@ -36,7 +38,7 @@ object NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
                 .client(okHttpClient)
-                .baseUrl("https://dsdf")
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
     }

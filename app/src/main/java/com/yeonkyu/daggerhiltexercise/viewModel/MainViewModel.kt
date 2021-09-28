@@ -17,12 +17,14 @@ class MainViewModel @Inject constructor(
     private val repository: MainRepository
 ): ViewModel(){
 
+    init {
+        Log.e("TAG","MainViewModel injected")
+    }
+
     fun fetchTrackList() {
         viewModelScope.launch {
             val response = repository.fetchTrackList("greenday","song",20,0)
-            Log.e("DH_CHECK","response : $response")
         }
-
     }
 
 }

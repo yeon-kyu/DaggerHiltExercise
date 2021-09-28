@@ -7,23 +7,24 @@ import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.scopes.ViewModelScoped
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class RepositoryModule {
+object RepositoryModule {
 
-//    @Provides
-//    @ViewModelScoped
-//    fun provideMainRepository(
-//        iTunesClient: ITunesClient
-//    ): MainRepository{
-//        return MainRepository(iTunesClient)
-//    }
+// abstract class 로 할 경우 아래와 같이 사용 가능
+//    @Binds
+//    abstract fun providesMainRepository(
+//        impl: MainRepositoryImpl
+//    ): MainRepository
 
-    @Binds
-    abstract fun providesMainRepository(
-        impl: MainRepositoryImpl
-    ): MainRepository
+    @Provides
+    @Singleton
+    fun provideMainRepository(
+        itunesClient: ITunesClient
+    ): MainRepository{
+        return MainRepositoryImpl(itunesClient)
+    }
 }
