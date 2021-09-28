@@ -1,5 +1,8 @@
 # DaggerHiltExercise
-#### 다른 프로젝트에서 DaggerHilt를 적용할 때 참고할 수 있도록 Activity/ViewModel/Repository/Network 에서 DI를 적용
+
+##### 다른 프로젝트에서 DaggerHilt를 적용할 때 참고할 수 있도록 Activity/ViewModel/Repository/Network 에서 DI를 적용
+
+###### 참고자료 https://medium.com/swlh/inject-viewmodel-using-hilt-2c968f1e85fe
 
 </br>
 
