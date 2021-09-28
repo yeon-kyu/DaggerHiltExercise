@@ -13,13 +13,13 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 @HiltViewModel
-class MainViewModel @ViewModelInject constructor(
-    private val mainRepository: MainRepository,
-    @Assisted private val savedStateHandle: SavedStateHandle
+class MainViewModel @Inject constructor(
+    private val repository: MainRepository
 ): ViewModel(){
+
     fun fetchTrackList() {
         viewModelScope.launch {
-            val response = mainRepository.fetchTrackList("greenday","song",20,0)
+            val response = repository.fetchTrackList("greenday","song",20,0)
             Log.e("DH_CHECK","response : $response")
         }
 

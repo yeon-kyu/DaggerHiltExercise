@@ -6,6 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ITunesSearchService {
+
     @GET("/search?")
     suspend fun fetchTrackList(
         @Query("term") term:String,
@@ -13,5 +14,4 @@ interface ITunesSearchService {
         @Query("limit") limit: Int,
         @Query("offset") offset:Int
     ) : Response<TrackResponse>
-
 }

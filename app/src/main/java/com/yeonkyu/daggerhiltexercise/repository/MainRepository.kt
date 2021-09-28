@@ -8,12 +8,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class MainRepository @Inject constructor(
-    private val iTunesClient: ITunesClient
-) {
-    @WorkerThread
-    suspend fun fetchTrackList(term:String, entity:String, limit:Int, offset:Int): TrackResponse =
-        withContext(Dispatchers.IO) {
-            iTunesClient.fetchTrackList(term, entity, limit, offset)
-        }
+//class MainRepository @Inject constructor(
+//    private val iTunesClient: ITunesClient
+//): Repository {
+//
+//    suspend fun fetchTrackList(term:String, entity:String, limit:Int, offset:Int): TrackResponse =
+//        withContext(Dispatchers.IO) {
+//            iTunesClient.fetchTrackList(term, entity, limit, offset)
+//        }
+//}
+
+interface MainRepository{
+
+    suspend fun fetchTrackList(term:String, entity:String, limit:Int, offset:Int): TrackResponse
 }
