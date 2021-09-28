@@ -13,4 +13,6 @@ data class TrackResponse(
     val artistName: String,
     @SerializedName(value = "artworkUrl60")
     val ImageUrl: String,
+
+    var isFavorite: Boolean = false
 )
