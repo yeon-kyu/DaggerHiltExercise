@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     private fun setUpViewModel(){
         viewModel.resetTrackList()
 
-        viewModel.liveTrackList.observe(binding.lifecycleOwner!!,{
+        viewModel.trackList.observe(binding.lifecycleOwner!!,{
             Log.e("CHECK_TAG","track list change observed")
             trackAdapter.setTrackList(it)
         })
